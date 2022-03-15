@@ -64,8 +64,8 @@ namespace cpet::histo {
 
     const double error = 0.0001;
     if ((f + g) > error) {
-      const auto diff = f - g;
-      result += (diff * diff) / (f + g);
+      const auto diff = abs(f - g);
+      result += (diff * diff * diff) / (f + g);
     }
   }
   return result / 2.0;
